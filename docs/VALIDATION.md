@@ -34,3 +34,11 @@ npm audit --omit=dev --audit-level=high
 ```
 
 The dev command uses Astro's `--ignore-lock` option to remain a foreground process when launched by an agent-managed preview supervisor. This avoids Astro's automatic background-server behavior conflicting with the supervisor.
+
+## Workers configuration — November 12, 2026
+
+- Added Workers Static Assets configuration for `dist/`, explicit custom 404 handling, and preview support. Wrangler pinned to 4.161.0.
+- Re-ran `npm run verify`: 0 errors, 0 warnings, 2 existing XMLValidator deprecation hints; 4 tests pass; 11 pages and 132 internal links/assets verified.
+- `npx wrangler deploy --dry-run` passed and read 43 built asset files. No live deployment performed.
+- `npx wrangler dev --local` could not start in this environment: `uv_interface_addresses` returned system error 1. Local Workers HTTP routing checks were therefore not completed; verify live 200/404 responses after Cloudflare deployment.
+- Substack RSS returned no usable articles; the build correctly retained the five curated links.

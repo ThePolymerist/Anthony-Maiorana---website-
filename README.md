@@ -1,6 +1,6 @@
 # AnthonyMaiorana.com
 
-A personal digital workshop for Anthony Maiorana's scientific work, independent writing, and evolving projects. Built with Astro and Markdown, with static output for Cloudflare Pages.
+A personal digital workshop for Anthony Maiorana's scientific work, independent writing, and evolving projects. Built with Astro and Markdown, with static output for Cloudflare Workers.
 
 ## Run locally
 
@@ -37,32 +37,37 @@ The initial saved list is a curated selection verified against the publication a
 
 `.github/workflows/refresh-writing.yml` prepares a daily refresh at 13:17 UTC, plus a manual Run workflow action. It becomes active only after the workflow is pushed to the default branch and Actions is enabled. It commits only changed article data. Repository rules must allow its narrowly scoped `contents: write` permission; on protected branches, convert it to a pull-request workflow rather than weakening branch protections. Verify that a resulting commit triggers a Cloudflare deployment in the connected account. No external scheduler or deployment hook is configured in this checkout.
 
-## Deploy to Cloudflare Pages
+## Deploy to Cloudflare Workers
 
-1. Push the reviewed implementation to this GitHub repository.
-2. In Cloudflare, create a **Pages** project and import `ThePolymerist/Anthony-Maiorana---website-`.
-3. Use the settings below.
-4. Inspect the resulting `pages.dev` deployment, then add `anthonymaiorana.com` under the project's Custom domains.
-5. Add `www.anthonymaiorana.com` if wanted, and configure a redirect from www to the apex domain in Cloudflare. Preserve unrelated mail and DNS records.
-6. Confirm HTTPS, both hostnames, the 404 page, feed refresh behavior, and Search Console ownership after publication.
+The site uses Workers Static Assets. `wrangler.jsonc` serves the Astro-generated `dist/` directory and explicitly uses the custom 404 page. No server adapter or Worker JavaScript entry point is needed. Wrangler is pinned in the lockfile.
+
+1. In Cloudflare Workers & Pages, create an application and Continue with GitHub.
+2. Select `ThePolymerist/Anthony-Maiorana---website-` and production branch `main`.
+3. Enter these exact settings:
 
 | Setting | Value |
 | --- | --- |
-| Production branch | `main` |
-| Framework preset | Astro |
+| Project name | `anthony-maiorana` (matches `wrangler.jsonc`) |
 | Build command | `npm run build` |
-| Build output directory | `dist` |
-| Root directory | Repository root |
-| Node version | `24` |
-| Server adapter | None; output is static |
+| Deploy command | `npx wrangler deploy` |
+| Preview command | `npx wrangler preview` |
+| Enable Preview builds | On |
+| Root directory | Repository root; leave blank |
+| Build environment variable | `NODE_VERSION=24` |
 
-Cloudflare currently recommends Workers for new projects, while Pages continues to accept static sites. This implementation honors the Pages target and keeps the output portable. If server features are needed later, evaluate a separate Worker/API or migrate deliberately; do not add the current Astro Cloudflare SSR adapter to this static Pages build without checking compatibility.
+4. Deploy and inspect the generated `workers.dev` URL.
+5. In the Worker's Settings > Domains & Routes, add a Custom Domain: `anthonymaiorana.com`. Allow Cloudflare to provision its DNS and certificate. Preserve unrelated mail and DNS records.
+6. Verify HTTPS, main and nested pages, missing-page HTTP 404, fonts/styles, and writing links. Add `www.anthonymaiorana.com` separately if wanted and configure a redirect to the apex domain.
+7. Confirm that later main-branch commits, including feed refresh commits, trigger Workers Builds.
+
+Local deployment validation: `npx wrangler deploy --dry-run`. Local serving of the built site: `npx wrangler dev --local`. These do not publish a live site.
+
+The owner selected Workers on November 12, 2026 after Cloudflare's dashboard identified Pages as the legacy workflow. Astro stays static; interactive backends can be added later for concrete needs. The original Pages plan is superseded.
 
 Hosting references:
 
-- [Cloudflare static sites](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/)
-- [Cloudflare build settings](https://developers.cloudflare.com/pages/configuration/build-configuration/)
-- [Astro's current Cloudflare guidance](https://docs.astro.build/en/guides/deploy/cloudflare/)
+- [Workers static assets](https://developers.cloudflare.com/workers/static-assets/)
+- [Pages-to-Workers configuration differences](https://developers.cloudflare.com/workers/static-assets/migration-guides/migrate-from-pages/)
 
 ## Project records
 

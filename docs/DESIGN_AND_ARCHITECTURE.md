@@ -51,7 +51,7 @@ The main navigation has five links plus the name/home link. Ideas belongs under 
 2. **Structured content.** Identity, experience, bibliography, and article data live in dedicated files. Markdown content collections generate project pages with validated stages.
 3. **Resilient writing index.** Refresh RSS at build time. Validate article origins, dates, XML structure, and payload size. Preserve the last saved index on failure and make its date visible.
 4. **Prepared daily updates.** A GitHub Actions workflow can update changed feed data once installed on main. Cloudflare deployment behavior must be confirmed after account connection.
-5. **Portable hosting.** Cloudflare Pages needs the static `dist` directory. Current Cloudflare documentation favors Workers for new work, but this build has no server dependency and can move later.
+5. **Portable hosting.** Cloudflare Workers serves the static `dist` directory using `wrangler.jsonc`. The owner selected Workers for the initial release; no server adapter is needed.
 6. **Public content boundary.** The public CV is derived, not the original document. It excludes federal application metadata, private contact details beyond the chosen professional email, and outside advisory marketing.
 
 ## Implementation sequence
@@ -62,7 +62,7 @@ The main navigation has five links plus the name/home link. Ideas belongs under 
 | Content | Core pages, public CV, bibliography, project Markdown, curated article index | Source-grounded claims; accurate project stages |
 | Interaction | Mobile menu, publication search/filter, print styling, feed refresh | Keyboard access and reliable fallbacks |
 | Validation | Type checks, feed tests, static link/metadata audit, browser review where available | Report actual results and limits |
-| Release | Push reviewed branch; connect Cloudflare Pages; add domain | Live HTTPS pages, mobile check, real feed refresh |
+| Release | Push reviewed branch; connect Cloudflare Workers; add domain | Live HTTPS pages, mobile check, real feed refresh |
 | Follow-on | Refine copy, fill remaining bibliographic links, add one useful experiment | Site continues to launch independently of future toolkit |
 
 ## First-release limits

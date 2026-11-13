@@ -42,7 +42,7 @@ These are preliminary concepts, not committed deliverables. The initial site lau
 - Domain: `anthonymaiorana.com`; registered through Cloudflare.
 - GitHub account: `ThePolymerist`.
 - Verified repository: `https://github.com/ThePolymerist/Anthony-Maiorana---website-`.
-- Initial framework: Astro; Markdown content; GitHub source history; Cloudflare Pages hosting target.
+- Initial framework: Astro; Markdown content; GitHub source history; Cloudflare Workers Static Assets hosting target (owner-selected November 12, 2026; supersedes the original Pages target).
 - Future dynamic functionality: separately evaluated Cloudflare Workers or another suitable backend.
 - The domain's spelling uses Anthony because scientific works are published under that name.
 

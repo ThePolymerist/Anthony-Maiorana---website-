@@ -23,7 +23,7 @@ The first version is deliberately small: a readable home for my work, a publicat
 - **Astro and static pages.** Most of this site is text and links. It should be fast to read and straightforward to maintain.
 - **Markdown for project notes.** Adding a project should start with writing, not a redesign.
 - **GitHub for source and history.** Changes should be reviewable and reversible.
-- **Cloudflare Pages as the initial hosting target.** The generated site is portable static HTML, so hosting can change without rewriting the content.
+- **Cloudflare Workers as the hosting target.** The generated site is portable static HTML, so hosting can change without rewriting the content.
 - **AI-assisted implementation, with explicit checks.** Useful assistance still needs factual review, working links, mobile checks, and a reproducible build.
 
 ## What this demonstrates
