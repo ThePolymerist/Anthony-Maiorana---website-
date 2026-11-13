@@ -1,4 +1,4 @@
-import { readFile, writeFile, rename } from 'node:fs/promises';
+import { readFile, writeFile, rename, appendFile } from 'node:fs/promises';
 import { parseFeed, readLimitedBody } from './feed.mjs';
 
 const file = new URL('../src/data/writing.json', import.meta.url);
@@ -22,5 +22,11 @@ try {
 } catch (error) {
   if (!Array.isArray(previous.items) || previous.items.length === 0) throw error;
   console.warn(`Feed refresh unavailable: ${error instanceof Error ? error.message : String(error)} Using ${previous.items.length} saved articles.`);
+  if (process.env.GITHUB_ACTIONS === 'true') {
+    console.warn('::warning title=Article refresh unavailable::The feed could not be refreshed. The saved article index is unchanged; new articles may be missing. See the step log for the upstream error.');
+    if (process.env.GITHUB_STEP_SUMMARY) {
+      await appendFile(process.env.GITHUB_STEP_SUMMARY, `## Article refresh unavailable\n\nThe upstream feed could not be retrieved or validated. Kept ${previous.items.length} saved articles without changing the index or its date. New articles may be missing. See the refresh step log for details.\n`);
+    }
+  }
   if (process.argv.includes('--strict')) process.exitCode = 1;
 }

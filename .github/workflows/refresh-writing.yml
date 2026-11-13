@@ -20,7 +20,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: node scripts/sync-feed.mjs --strict
+      - name: Refresh articles (keep saved index if Substack is unavailable)
+        run: node scripts/sync-feed.mjs
       - run: npm run check && npm test && npm run build:offline && node scripts/check-output.mjs
       - name: Commit only changed article data
         shell: bash
