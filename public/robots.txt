@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anthonymaiorana.com/sitemap-index.xml

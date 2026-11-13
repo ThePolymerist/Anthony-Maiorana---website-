@@ -1,0 +1,12 @@
+{
+  "source": "https://polymerist.substack.com/feed",
+  "mode": "curated",
+  "checkedAt": "2026-11-12",
+  "items": [
+    { "title": "Start Here: The Chemistry Behind What Comes Next", "url": "https://polymerist.substack.com/p/start-here-the-chemistry-behind-what", "date": "2026-11-03", "description": "An introduction to The Polymerist and the questions that connect chemistry, industry, and useful products." },
+    { "title": "A World Beyond Crude", "url": "https://polymerist.substack.com/p/a-world-beyond-crude", "date": "2026-11-01", "description": "A guest contribution from Adrian DiMarco on alternative feedstocks and chemurgy." },
+    { "title": "In Search of: A Unicorn", "url": "https://polymerist.substack.com/p/in-search-of-a-unicorn", "date": "2026-09-15", "description": "The tradeoffs in hiring scientists with specialized knowledge, practical skills, and the willingness to move." },
+    { "title": "The Purpose of The Polymerist", "url": "https://polymerist.substack.com/p/the-purpose-of-the-polymerist", "date": "2026-09-02", "description": "Revisiting the purpose of an independent publication about the chemical industry." },
+    { "title": "The Lean Lab", "url": "https://polymerist.substack.com/p/the-lean-lab", "date": "2026-08-11", "description": "A practical starting point for researchers exploring whether their science could become a viable product or company." }
+  ]
+}
