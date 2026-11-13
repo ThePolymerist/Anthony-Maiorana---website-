@@ -3,7 +3,6 @@ export const site = {
   familiarName: 'Tony',
   url: 'https://anthonymaiorana.com',
   description: 'The personal workshop of Anthony Maiorana, PhD. Chemistry, medical devices, The Polymerist, and experiments in building useful things.',
-  email: 'tonym87@gmail.com',
   location: 'Washington, DC',
   linkedin: 'https://www.linkedin.com/in/tonymaiorana/',
   github: 'https://github.com/ThePolymerist',

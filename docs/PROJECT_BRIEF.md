@@ -29,7 +29,7 @@ The site is infrastructure. Meaningful inbound opportunities depend on useful wo
 | Publications | Scientific papers, patents, selected public contributions |
 | Projects & tools | Real projects, repositories, interactive tools when available, development journals |
 | Ideas & explorations | Questions and early concepts clearly distinguished from delivered work |
-| Contact | Personal professional email, LinkedIn, GitHub, The Polymerist |
+| Contact | LinkedIn, GitHub, The Polymerist; no public email address |
 
 ## Future Lean Lab Toolkit
 

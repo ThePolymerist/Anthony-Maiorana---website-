@@ -40,7 +40,7 @@ Fonts are bundled and self-hosted. No stock laboratory imagery, decorative AI im
 | `/projects/personal-website/` | Development journal for this website |
 | `/projects/lean-lab-toolkit/` | Early toolkit concept, labeled Idea |
 | `/ideas/` | Open questions; linked from Projects and home |
-| `/contact/` | Email and professional profiles |
+| `/contact/` | Professional profiles |
 | `/404.html` | Useful recovery for missing pages |
 
 The main navigation has five links plus the name/home link. Ideas belongs under the workshop rather than expanding the top navigation. The CV is available from About.
@@ -52,7 +52,7 @@ The main navigation has five links plus the name/home link. Ideas belongs under 
 3. **Resilient writing index.** Refresh RSS at build time. Validate article origins, dates, XML structure, and payload size. Preserve the last saved index on failure and make its date visible.
 4. **Prepared daily updates.** A GitHub Actions workflow can update changed feed data once installed on main. Cloudflare deployment behavior must be confirmed after account connection.
 5. **Portable hosting.** Cloudflare Workers serves the static `dist` directory using `wrangler.jsonc`. The owner selected Workers for the initial release; no server adapter is needed.
-6. **Public content boundary.** The public CV is derived, not the original document. It excludes federal application metadata, private contact details beyond the chosen professional email, and outside advisory marketing.
+6. **Public content boundary.** The public CV is derived, not the original document. It excludes federal application metadata, private contact details including email addresses, and outside advisory marketing.
 
 ## Implementation sequence
 

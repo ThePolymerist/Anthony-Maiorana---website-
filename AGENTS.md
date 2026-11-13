@@ -8,6 +8,7 @@ Read `docs/PROJECT_BRIEF.md` and `docs/DESIGN_AND_ARCHITECTURE.md` before substa
 - Do not copy the source CV wholesale into public assets.
 - Label ideas, prototypes, work in development, and published tools accurately.
 - Keep credentials out of tracked files and client code.
+- Do not publish the owner’s email address or mailto links in site content, metadata, or assets. Use professional profile links for contact.
 - Run `npm run verify` after meaningful code changes. Check browser behavior when available, and report verification limits honestly.
 - Preserve the existing domain and Git remote. Do not rewrite remote history.
 
