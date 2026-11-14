@@ -9,6 +9,7 @@ const analyticsConfigured = Boolean(import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.t
     <h2>Optional Google Analytics</h2>
     {analyticsConfigured ? <p>Google Analytics loads on this website only if you choose “Allow analytics.” It uses cookies to measure visits, traffic sources, reading activity, and selected clicks to articles, the subscription page, and LinkedIn. These measurements help me decide what to write and improve.</p> : <p>Google Analytics is not currently configured in this version of the website. If enabled later, it will load only after you choose to allow it.</p>}
     <p>The site does not send email addresses, message contents, or visitor names to Google Analytics. Advertising personalization and Google signals are disabled in the website tag. Measured visits are browser activity, not a list of identified people.</p>
+    <p>Read <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from sites that use its services</a>.</p>
     {analyticsConfigured && <p>Use “Analytics preferences” in the footer to change your choice. Declining stops Google Analytics on this site and removes its first-party analytics cookies here. Your preference is stored in this browser. The choice applies to this website, not to Substack or LinkedIn.</p>}
     <h2>Hosting and external links</h2>
     <p>Cloudflare hosts this website and may process requests for security and performance. The live site also uses Cloudflare’s measurement beacon. That service is separate from the optional Google Analytics setting.</p>
