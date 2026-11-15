@@ -1,12 +1,79 @@
 {
   "source": "https://polymerist.substack.com/feed",
-  "mode": "curated",
-  "checkedAt": "2026-11-12",
+  "mode": "feed",
+  "checkedAt": "2026-11-15",
   "items": [
-    { "title": "Start Here: The Chemistry Behind What Comes Next", "url": "https://polymerist.substack.com/p/start-here-the-chemistry-behind-what", "date": "2026-11-03", "description": "An introduction to The Polymerist and the questions that connect chemistry, industry, and useful products." },
-    { "title": "A World Beyond Crude", "url": "https://polymerist.substack.com/p/a-world-beyond-crude", "date": "2026-11-01", "description": "A guest contribution from Adrian DiMarco on alternative feedstocks and chemurgy." },
-    { "title": "In Search of: A Unicorn", "url": "https://polymerist.substack.com/p/in-search-of-a-unicorn", "date": "2026-09-15", "description": "The tradeoffs in hiring scientists with specialized knowledge, practical skills, and the willingness to move." },
-    { "title": "The Purpose of The Polymerist", "url": "https://polymerist.substack.com/p/the-purpose-of-the-polymerist", "date": "2026-09-02", "description": "Revisiting the purpose of an independent publication about the chemical industry." },
-    { "title": "The Lean Lab", "url": "https://polymerist.substack.com/p/the-lean-lab", "date": "2026-08-11", "description": "A practical starting point for researchers exploring whether their science could become a viable product or company." }
+    {
+      "title": "Start Here: The Chemistry Behind What Comes Next",
+      "url": "https://polymerist.substack.com/p/start-here-the-chemistry-behind-what",
+      "date": "2026-11-03",
+      "description": "Why the chemical industry matters, what holds it back, and how we can build something better."
+    },
+    {
+      "title": "A World Beyond Crude",
+      "url": "https://polymerist.substack.com/p/a-world-beyond-crude",
+      "date": "2026-11-01",
+      "description": "Alternative Feedstocks and the Return of Chemurgy by Adrian DiMarco"
+    },
+    {
+      "title": "In Search of: A Unicorn",
+      "url": "https://polymerist.substack.com/p/in-search-of-a-unicorn",
+      "date": "2026-09-15",
+      "description": "Why it can be so difficult to find talent"
+    },
+    {
+      "title": "The Purpose of The Polymerist",
+      "url": "https://polymerist.substack.com/p/the-purpose-of-the-polymerist",
+      "date": "2026-09-02",
+      "description": "An editorial thesis six years later"
+    },
+    {
+      "title": "The Lean Lab",
+      "url": "https://polymerist.substack.com/p/the-lean-lab",
+      "date": "2026-08-11",
+      "description": "How to test whether your chemistry can become a company before you raise money."
+    },
+    {
+      "title": "Chemistry in The Time of Change",
+      "url": "https://polymerist.substack.com/p/chemistry-in-the-time-of-change",
+      "date": "2026-07-01",
+      "description": "Life goes on"
+    },
+    {
+      "title": "An Ace Up Your Sleeve",
+      "url": "https://polymerist.substack.com/p/an-ace-up-your-sleeve",
+      "date": "2026-01-20",
+      "description": "Why it's a good idea to have one and how to get it."
+    },
+    {
+      "title": "The Churn",
+      "url": "https://polymerist.substack.com/p/the-churn",
+      "date": "2025-09-19",
+      "description": "Circling writing a book"
+    },
+    {
+      "title": "The Chemical Industry Needs Energy Too",
+      "url": "https://polymerist.substack.com/p/the-chemical-industry-needs-energy",
+      "date": "2025-09-06",
+      "description": "Biomanufacturing to save the day?"
+    },
+    {
+      "title": "The Furan Revolution",
+      "url": "https://polymerist.substack.com/p/the-furan-revolution",
+      "date": "2025-06-19",
+      "description": "will not be televised, but it will happen in France"
+    },
+    {
+      "title": "Searching For Spice",
+      "url": "https://polymerist.substack.com/p/searching-for-spice",
+      "date": "2025-04-05",
+      "description": "The next industrial revolution will depend on unlocking new resources or making the ones we have now more useful."
+    },
+    {
+      "title": "The Decline of Industrial American Science",
+      "url": "https://polymerist.substack.com/p/the-decline-of-industrial-american",
+      "date": "2025-03-22",
+      "description": "Maybe less decline and more of a course change?"
+    }
   ]
 }
