@@ -1,21 +1,21 @@
 # Audience measurement setup
 
-Prepared November 14, 2026. This is an activation runbook, not evidence that a Google Analytics account or Search Console property has been configured.
+The GA4 **Personal Website** stream is configured for `https://anthonymaiorana.com`. Use the acceptance checks below to confirm collection after deployment.
 
 ## Site implementation
 
 The site is static Astro on Cloudflare Workers Static Assets. A shared layout includes optional Google Analytics and Search Console configuration. There is no Google Tag Manager container, application database, contact form, or server-side tracking dependency.
 
-`PUBLIC_GA4_MEASUREMENT_ID` is an optional public GA4 measurement identifier. With it unset, no Google analytics loader or choice controls are rendered. If it is invalid, the build fails. When set, `public/analytics.js` runs only on HTTPS `anthonymaiorana.com`, never localhost, a preview host, or a workers.dev host. Google's script loads only after a visitor allows analytics. Declining removes the site's first-party GA cookies and reloads if Google had already loaded. The footer lets the visitor change their choice. Cloudflare's existing beacon is separately managed in the hosting account.
+`PUBLIC_GA4_MEASUREMENT_ID` defaults to the Personal Website stream in `.env.production`. An empty value suppresses the analytics loader and choice controls. An invalid ID fails the build. When set, `public/analytics.js` runs only on HTTPS `anthonymaiorana.com`. Google's script loads only after a visitor allows analytics. Declining removes the site's first-party GA cookies and reloads if Google had already loaded. The footer lets the visitor change their choice. Cloudflare's existing beacon is separately managed in the hosting account.
 
-Set this variable in **Workers Builds → build variables**, not merely Worker runtime variables. Static Astro reads it at build time. Rebuild after changing it. The ID is public; never add API credentials or subscriber data to this repository. `.env.example` documents both optional variables.
+To override the ID in Cloudflare, use **Workers Builds → build variables** and rebuild the static site. The ID is public. Keep API credentials and subscriber data outside this repository. `.env.example` documents the build variables.
 
 One `gtag('config')` initializes the destination and sends one automatic page view per full-page navigation. There is no manually emitted second page view and no SPA router. Google's current documentation recommends managing tag settings in the UI; it also confirms that the existing `config` setup remains supported. Use the Admin interface for cross-domain settings and keep a single website tag installation.
 
 ## Account configuration
 
 1. Reuse the owner's existing Google Analytics account if appropriate. Inspect it before creating duplicates. Otherwise create an account owned by the user, not by a connector vendor.
-2. Proposed property: **Anthony Maiorana — Audience**. Proposed web stream: **Professional web presence**, starting URL `https://anthonymaiorana.com`. Time zone **America/New_York**, currency **USD**. One web stream can cover the related website and publication.
+2. Reuse the **Personal Website** stream for `https://anthonymaiorana.com`. Verify that the property's reporting time zone is **America/New_York** and currency is **USD**. One web stream can cover the related website and publication.
 3. Use the same stream's measurement ID in the website build variable and in Substack **Settings → Analytics → Google Analytics Measurement ID**. Do not add a second GA tag through Cloudflare or a tag manager.
 4. Set 14-month event retention, leave Google signals, user-provided data collection and advertising features off. Website code also disables advertising signals. Turn on email/query-parameter redaction in the stream settings. Do not put personal data in URLs or campaign names.
 5. Start with enhanced measurement page views and scrolls. Disable automatic site-search/form tracking and unnecessary automatic outbound/file/video events. The site has explicit intent events below. A print-button click is not proof a PDF was saved.
