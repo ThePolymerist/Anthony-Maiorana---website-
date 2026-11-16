@@ -1,0 +1,25 @@
+---
+const measurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() ?? '';
+if (measurementId && !/^G-[A-Z0-9]+$/.test(measurementId)) {
+  throw new Error('PUBLIC_GA4_MEASUREMENT_ID must be a GA4 ID beginning G-.');
+}
+---
+{measurementId && <>
+  <button type="button" class="analytics-settings" data-analytics-settings hidden>Analytics preferences</button>
+  <section class="analytics-choice" data-analytics-choice aria-label="Optional analytics" hidden>
+    <p>Allow Google Analytics to help me understand which writing and projects people find useful? It uses cookies to measure visits and selected link clicks. <a href="/privacy/">Privacy details</a></p>
+    <div class="analytics-actions">
+      <button type="button" class="button secondary" data-analytics-decline>No thanks</button>
+      <button type="button" class="button" data-analytics-accept>Allow analytics</button>
+    </div>
+  </section>
+  <script is:inline type="module" src="/analytics.js" data-measurement-id={measurementId}></script>
+</>}
+<style>
+  .analytics-settings { font: inherit; color: var(--muted, #58655e); background: none; border: 0; text-decoration: underline; cursor: pointer; padding: 0; margin-top: 16px; }
+  .analytics-choice { position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 100; margin: 0 auto; max-width: 780px; padding: 20px; background: #f6f4ee; color: #202d29; border: 1px solid #58655e; box-shadow: 0 4px 24px #202d2922; }
+  .analytics-choice p { margin: 0 0 16px; font-size: 16px; line-height: 1.5; }
+  .analytics-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  [hidden] { display: none !important; }
+  @media print { .analytics-choice, .analytics-settings { display: none !important; } }
+</style>

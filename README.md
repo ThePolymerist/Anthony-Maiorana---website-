@@ -76,4 +76,4 @@ Hosting references:
 - `docs/CONTENT_SOURCES.md`: source provenance, conservative wording, and outstanding content checks.
 - `docs/VALIDATION.md`: verified results and launch limitations.
 
-No analytics, advertising trackers, visitor accounts, or browser-held API keys are included. Fonts are self-hosted through Fontsource; their upstream licenses ship with the font packages. Source visibility does not by itself grant a license to reuse scientific papers, newsletter content, or other third-party material.
+Production builds use the GA4 measurement ID in `.env.production`. The tag loads only on the live domain after a visitor opts in. See `docs/ANALYTICS.md` for configuration, Search Console verification, event definitions, UTM conventions and acceptance checks. The live site's Cloudflare measurement beacon is managed separately in the hosting account. No advertising trackers, visitor accounts, or browser-held API keys are included. Fonts are self-hosted through Fontsource; their upstream licenses ship with the font packages. Source visibility does not by itself grant a license to reuse scientific papers, newsletter content, or other third-party material.
