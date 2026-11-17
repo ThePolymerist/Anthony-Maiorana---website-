@@ -12,7 +12,7 @@ export const site = {
 };
 
 export const navigation = [
-  { href: '/about/', label: 'About' },
+  { href: '/about/', label: 'Experience & About' },
   { href: '/writing/', label: 'Writing' },
   { href: '/publications/', label: 'Publications' },
   { href: '/projects/', label: 'Projects' },
