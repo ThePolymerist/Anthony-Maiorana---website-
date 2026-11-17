@@ -13,7 +13,7 @@ Private source documents are not copied into this repository. Their internal app
 
 ## Conservative content decisions
 
-- Describe the GCP portfolio work as identifying $6 million in opportunities, not asserting all savings were realized. Source résumé versions differ in how strongly they state this result.
+- Owner clarification, November 17, 2026: GCP identified opportunities were $6 million per year; $1 million per year was executed through the Grace Select redesign. The $1 million is a subset of the $6 million, not an additional amount. Never describe the entire opportunity portfolio as realized savings.
 - Keep current FDA work at a general professional level. Do not include internal programs, unpublished policy schedules, case-specific review information, internal tools, or confidential review detail.
 - Exclude outside advisory relationships and all consulting/service offers, including from the public CV.
 - Do not publish a phone number, home address, supervisor contacts, federal-application supplement, vaccination data, or academic course-hour inventory.
@@ -43,3 +43,16 @@ The direct RSS request in this environment returned an HTML unavailable page. Th
 ## Layout reference
 
 [Brendan O'Leary's site](https://boleary.com) was read as an example of combining experience, publications, and software in a personal site. Its design and wording were not copied.
+
+## Professional experience expansion — November 17, 2026
+
+The owner reviewed the proposed copy and confirmed these public-facing facts directly:
+
+- GCP: $6 million in identified annual cost-reduction opportunities, of which $1 million in annual savings was executed.
+- Hexion: Resonance polyols were commercially launched before the owner left. No subsequent revenue, adoption, or growth is claimed.
+- Worthen: commercially launched a water-based polyurethane adhesive combining performance benefits of two-part systems with the shelf life and flexibility of a one-part system. No unprovided strength, durability, emissions, or other performance metrics are inferred.
+- FDA: 50+ consultative reviews in CDRH, presented separately from 100+ submissions as lead reviewer. No aggregate total is inferred. Training counts are excluded at the owner’s direction.
+
+Expanded role details are grounded in the owner’s November 15 professional profile and original MedTech résumé, read during drafting, together with the November 17 corrections above. The newer profile governs discrepancies. The under-one-year adhesive development timeline, standards/certification work, quality-control lab support, manufacturing and field trials, and sensor-development details come from these materials.
+
+The homepage now foregrounds selected professional outcomes, with links into the detailed experience section. About and the public CV continue to share `src/data/experience.ts`. The temporary FDA team-lead detail is a separate entry within the existing FDA employment period. Public copy excludes named review cases, internal systems, confidential training counts, and outside advisory marketing.

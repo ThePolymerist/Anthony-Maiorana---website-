@@ -1,5 +1,15 @@
 # First-release validation
 
+## Professional experience update — November 17, 2026
+
+- `npm run verify` passed: Astro/TypeScript reported zero errors and zero warnings, with the two existing XMLValidator deprecation hints; all 10 tests passed; 12 static pages built; 184 internal links/assets and page metadata passed the output audit.
+- Substack RSS refresh returned no usable articles. The build retained the existing 12 saved articles as designed; article data was not changed by this update.
+- Reviewed the homepage and expanded About experience in Chromium at a 1,363 CSS-pixel viewport. The three professional highlights fit in columns without horizontal overflow. The GCP deep link landed at the correct experience entry.
+- At 400% browser zoom (340 CSS-pixel effective viewport), Home, About, and CV had no horizontal overflow. Homepage highlights switched to one column. Mobile navigation opened and navigated to Experience & About, then returned to its closed state. The CV displayed all six experience entries and the updated annual-savings result.
+- Compact-layout checks used browser zoom, not a physical mobile device. Final printed/PDF pagination remains unverified. No production deployment is part of this update; changes are prepared as a GitHub pull request.
+
+---
+
 Validated November 12, 2026. These results describe the local implementation, not a public deployment.
 
 ## Verified
