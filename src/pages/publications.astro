@@ -6,6 +6,7 @@ import { papers, patents } from '../data/publications';
 <BaseLayout title="Publications & patents" description="Scientific publications and patent records by Anthony Maiorana, spanning biobased epoxy resins, nanocomposites, cellulose, and specialty materials.">
   <PageIntro eyebrow="Research / Publications & patents" title="The scientific record." description="Research on the structure and performance of materials, from biobased epoxy resins to nanocomposites. Scientific publications appear under Anthony Maiorana." />
   <div class="wrap">
+    <p class="note" style="margin-bottom:28px">Looking for talks, recordings, or conference proceedings? Visit <a href="/speaking/">Speaking & conferences</a>.</p>
     <div class="collection-toolbar" id="publication-controls" hidden><div class="filter-buttons" role="group" aria-label="Publication type"><button type="button" data-filter="all" aria-pressed="true">All records</button><button type="button" data-filter="paper" aria-pressed="false">Papers</button><button type="button" data-filter="patent" aria-pressed="false">Patents & applications</button></div><label class="search-label" for="publication-search">Search<input type="search" id="publication-search" placeholder="Title, author, year…" /></label></div>
     <p class="result-count" id="result-count" role="status" aria-live="polite">{papers.length} papers · {patents.length} patent and application records</p>
     <p class="empty-state" id="empty-results" hidden>No records match that search. Try a shorter phrase or select all records.</p>

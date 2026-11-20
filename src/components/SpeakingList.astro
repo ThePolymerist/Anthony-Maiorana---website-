@@ -1,0 +1,17 @@
+---
+import type { SpeakingRecord } from '../data/speaking';
+interface Props { items: SpeakingRecord[]; }
+const { items } = Astro.props;
+---
+{items.map(item => <article class="speaking-record" id={item.id}>
+  <p class="speaking-date">{item.date}</p>
+  <div>
+    <p class="speaking-venue">{item.venue}</p>
+    <h3>{item.title}</h3>
+    <p class="speaking-role">{item.role}</p>
+    <p class="speaking-description">{item.description}</p>
+    {item.authors && <p class="speaking-authors">{item.authors}</p>}
+    {item.recognition && <p class="speaking-award">{item.recognition}</p>}
+    {item.links.length > 0 && <div class="speaking-links">{item.links.map(link => <a href={link.url}>{link.label}</a>)}</div>}
+  </div>
+</article>)}
