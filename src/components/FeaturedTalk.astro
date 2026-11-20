@@ -1,0 +1,19 @@
+---
+import { talks } from '../data/speaking';
+const talk = talks[0];
+---
+<div class="featured-talk">
+  <a class="recording-panel" href={talk.links[0].url} aria-label="Watch the FDA CDRH human factors town hall recording on YouTube">
+    <span class="recording-label">Recorded public town hall</span>
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="31" stroke="currentColor"/><path d="m26 20 19 12-19 12V20Z" fill="currentColor"/></svg>
+    <span class="recording-title">Human factors in medical-device submissions</span>
+    <span class="recording-label">Watch on YouTube · July 22, 2026</span>
+  </a>
+  <div class="featured-talk-copy">
+    <p class="speaking-venue">{talk.venue}</p>
+    <h3>{talk.title}</h3>
+    <p class="speaking-role">{talk.role}</p>
+    <p class="speaking-description">{talk.description}</p>
+    <div class="speaking-links">{talk.links.slice(1).map(link => <a href={link.url}>{link.label}</a>)}</div>
+  </div>
+</div>

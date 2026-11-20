@@ -14,6 +14,7 @@ export const site = {
 export const navigation = [
   { href: '/about/', label: 'Experience & About' },
   { href: '/writing/', label: 'Writing' },
+  { href: '/speaking/', label: 'Speaking & Conferences' },
   { href: '/publications/', label: 'Publications' },
   { href: '/projects/', label: 'Projects' },
   { href: '/contact/', label: 'Contact' },

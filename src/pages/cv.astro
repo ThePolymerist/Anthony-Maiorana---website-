@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { experience, education, honors } from '../data/experience';
 import { papers, patents } from '../data/publications';
+import { talks, proceedings } from '../data/speaking';
 import { site } from '../data/site';
 ---
 <BaseLayout title="Curriculum vitae" description="Public professional CV of Anthony Maiorana, PhD: experience, education, research, scientific publications, and patent records.">
@@ -10,7 +11,7 @@ import { site } from '../data/site';
     <section class="cv-section"><h2>Writing</h2><h3>The Polymerist · Founder & writer</h3><p class="role">September 2020–present</p><p style="margin-top:12px">Independent writing about polymer chemistry, the chemical industry, technology development, and commercialization.</p></section>
     <section class="cv-section"><h2>Education & academic research</h2>{education.map(item => <div style="margin-bottom:20px"><h3>{item.degree} · {item.institution}</h3><p class="role">{item.year}</p><p style="margin-top:8px">{item.detail}</p></div>)}<ul><li>Doctoral researcher at Rensselaer Polytechnic Institute / NYU Tandon, 2012–2016.</li><li>Undergraduate research in organometallic chemistry at the University of Maryland, 2008–2009.</li><li>Research intern at the Smithsonian Museum Conservation Institute, 2007–2008.</li><li>Taught organic chemistry laboratories at NYU Polytechnic (2012–2013) and Rensselaer (2013–2015); mentored undergraduate researchers.</li></ul></section>
     <section class="cv-section"><h2>Selected training & honors</h2><ul><li>FDA Reviewer Certification Program and Advanced Reviewer Certification Program (2022).</li><li>AAMI Human Factors Training (2022).</li>{honors.map(item => <li>{item}</li>)}</ul></section>
-    <section class="cv-section"><h2>Public presentations</h2><ul><li>“How Is the FDA OIVT Evolving to Regulate New Technologies?” Diabetes Technology Meeting, 2024.</li><li>FDA public town hall on human factors content guidance, July 22, 2026.</li></ul></section>
+    <section class="cv-section"><h2>Speaking & conferences</h2><p><a href="/speaking/">Recordings, slides & conference contributions</a></p><h3 style="margin-top:20px">Talks & presentations</h3><ul>{talks.map(t => <li>{t.title}. {t.venue}, {t.date}. {t.role}.{t.recognition && ` ${t.recognition}.`}</li>)}</ul><h3>Proceedings & conference contributions</h3><ul>{proceedings.map(p => <li>{p.title}. {p.venue}, {p.year}. {p.role}.</li>)}</ul></section>
     <section class="cv-section"><h2>Peer-reviewed publications</h2>{papers.map(p => <article class="citation"><span class="citation-year">{p.year}</span><div><h3>{p.doi ? <a href={`https://doi.org/${p.doi}`}>{p.title}</a> : p.title}</h3><p class="authors">{p.authors}</p><p class="journal"><em>{p.journal}</em> · {p.citation}{p.doi ? ` · doi:${p.doi}` : ''}</p></div></article>)}</section>
     <section class="cv-section"><h2>Patents & applications</h2><p>Individual records; some may belong to the same patent family.</p><ul>{patents.map(p => <li>{p.url ? <a href={p.url}>{p.identifier}</a> : p.identifier}. {p.inventors}.</li>)}</ul></section>
   </div></article>

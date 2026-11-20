@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import FeaturedTalk from '../components/FeaturedTalk.astro';
+import SpeakingList from '../components/SpeakingList.astro';
+import { talks, proceedings } from '../data/speaking';
+---
+<BaseLayout title="Speaking & conferences" description="Public talks, recordings, conference presentations, and proceedings by Anthony Maiorana, PhD, across medical devices, polymer chemistry, and materials research.">
+  <PageIntro eyebrow="Speaking & conferences" title="Science, in conversation." description="Public talks and conference contributions across medical devices, polymer chemistry, and materials research. Explore recordings, presentation materials, and selected proceedings." />
+  <div class="wrap speaking-page">
+    <section aria-labelledby="featured-recording"><h2 id="featured-recording" class="speaking-section-title">Featured recording</h2><FeaturedTalk /></section>
+    <nav class="speaking-links speaking-jump-links" aria-label="Speaking page sections"><a href="#presentations">Talks & presentations</a><a href="#proceedings">Proceedings & conference contributions</a></nav>
+    <section class="section" aria-labelledby="presentations"><div class="section-heading"><h2 id="presentations">Talks & presentations</h2></div><SpeakingList items={talks.slice(1)} /></section>
+    <section class="section" aria-labelledby="proceedings"><div class="section-heading"><h2 id="proceedings">Proceedings & conference contributions</h2></div><p class="speaking-section-note">Published proceedings, abstracts, and collaborative conference contributions. Author and presenter roles are identified for each record.</p><SpeakingList items={proceedings} /></section>
+    <p class="speaking-section-note">For journal articles and patent records, see <a href="/publications/">Publications & patents</a>.</p>
+  </div>
+</BaseLayout>

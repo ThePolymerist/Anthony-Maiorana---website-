@@ -52,3 +52,10 @@ The dev command uses Astro's `--ignore-lock` option to remain a foreground proce
 - `npx wrangler deploy --dry-run` passed and read 43 built asset files. No live deployment performed.
 - `npx wrangler dev --local` could not start in this environment: `uv_interface_addresses` returned system error 1. Local Workers HTTP routing checks were therefore not completed; verify live 200/404 responses after Cloudflare deployment.
 - Substack RSS returned no usable articles; the build correctly retained the five curated links.
+
+## November 20, 2026 — Speaking & conferences
+
+- `npm run verify`: passed Astro checks, all 10 existing behavior tests, production build, and generated-page metadata/internal-link audit (13 pages). Existing XMLValidator deprecation hints remain. RSS returned HTTP 403; the build retained the saved article index.
+- `git diff --check`: passed.
+- Verified the town hall recording URL against the FDA event page and reviewed public transcript attribution. Conference sources and unresolved Scholar completeness are documented in CONTENT_SOURCES.md.
+- Browser layout/interaction QA was unavailable: the managed environment did not expose `cua_repl.js`. Responsive CSS follows the existing breakpoints, includes a stacked recording feature on mobile, and accommodates the expanded navigation at tablet widths. Actual rendered layout and external video playback have not been visually verified.
