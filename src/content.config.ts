@@ -12,7 +12,14 @@ const projects = defineCollection({
     order: z.number(),
     updated: z.string(),
     repository: z.url().optional(),
+    promptFile: z.string().regex(/^\/downloads\/[a-zA-Z0-9/_-]+\.txt$/).optional(),
+    sampleUrl: z.string().regex(/^\/projects\/[a-zA-Z0-9/_-]+\/$/).optional(),
   }),
 });
 
-export const collections = { projects };
+const briefs = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/briefs' }),
+  schema: z.object({ title: z.string(), description: z.string() }),
+});
+
+export const collections = { projects, briefs };
